@@ -5,8 +5,9 @@ import us.bojie.mealcompose.model.MealsRepository
 import us.bojie.mealcompose.model.response.Category
 
 class MealsCategoriesViewModel(
-    private val repository: MealsRepository
+    private val repository: MealsRepository = MealsRepository()
 ) : ViewModel() {
-    fun getCategories(): List<Category> = repository.getMeals().categories
+
+    suspend fun getCategories(): List<Category> = repository.getMeals().categories
 
 }
